@@ -8,6 +8,7 @@ export default class Company extends React.Component {
   ] ;
   */
 
+
   render() {
     return <div>Component</div> ;
   }
