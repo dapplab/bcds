@@ -1,8 +1,7 @@
-import 'Entity';
+contract Company {
+  bytes32 public name;
 
-contract Company is Entity{
-  string name;
-  function Company(string _name){
+  function setName(bytes32 _name) {
     name = _name;
   }
 }
