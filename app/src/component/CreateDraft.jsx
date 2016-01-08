@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Input, Select, Checkbox, Radio, DatePicker} from 'antd';
+import {Form, Input, Select, Checkbox, Radio, DatePicker, Button, Row, Col} from 'antd';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -60,6 +60,12 @@ export default class CreateDraft extends React.Component {
             wrapperCol={{span: 14}}>
             <Input type="textarea" id="draft-memo" rows="3" />
           </FormItem>
+
+          <Row>
+            <Col span="16" offset="6">
+              <Button type="primary" htmlType="submit">创建票据</Button>
+            </Col>
+          </Row>
 
         </Form>
       </div>
