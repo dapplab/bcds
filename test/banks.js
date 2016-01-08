@@ -1,6 +1,6 @@
-contract('Bank', function(accounts) {
+contract('Banks', function(accounts) {
   it("should assert true", function(done) {
-    var bank = Bank.at(Bank.deployed_address);
+    var banks = Banks.at(Banks.deployed_address);
     assert.isTrue(true);
     done();
   });
