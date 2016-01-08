@@ -18,7 +18,10 @@
   },
   "deploy": [
     // Names of contracts that should be deployed to the network.
-    "Example"
+    "Bank",
+    "Company",
+    "Draft",
+    "Entity"
   ],
   "rpc": {
     // Default RPC configuration.
