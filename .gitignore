@@ -9,3 +9,5 @@ environments
 !environments/production/config.json
 !environments/staging/config.json
 !environments/test/config.json
+
+app/npm-debug.log
