@@ -7,10 +7,9 @@
   },
   "deploy": [
     // Names of contracts that should be deployed to the network.
-    "Banks",
-    "Companies",
+    "Bank",
+    "Company",
     "Draft",
-    "DraftCreator",
     "Entity"
   ],
   "rpc": {
