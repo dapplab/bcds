@@ -9,7 +9,8 @@ export default class CreateDraft extends React.Component {
 
   render() {
     return (
-      <div className="form-general">
+
+      <div className="main-wrapper form-general">
         <Form horizontal>
           <FormItem
             label="收款人："
