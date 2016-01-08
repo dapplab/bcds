@@ -1,8 +1,7 @@
 import 'Entity';
 
 contract Company is Entity{
-  string name;
-  function Company(string _name){
+  function Company(bytes32 _name){
     name = _name;
   }
 }
