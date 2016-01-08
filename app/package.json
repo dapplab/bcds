@@ -20,7 +20,9 @@
     "eslint": "~1.10.3",
     "eslint-config-airbnb": "~2.1.0",
     "eslint-plugin-react": "~3.11.3",
+    "history": "^1.17.0",
     "pre-commit": "1.x",
+    "react-router": "^1.0.3",
     "web3": "^0.15.1"
   },
   "pre-commit": [

@@ -1,12 +1,16 @@
 import React from 'react';
-import { DatePicker } from 'antd';
+import { Router, Route, Link , NoMatch} from 'react-router';
+import Home from './Home' ;
+import Bank from './Bank' ;
 
-const App = React.createClass({
+export default class App extends React.Component {
   render() {
-    return (
-      <DatePicker />
-    );
-  },
-});
+    return <Router>
+      <Route path="/" component={Home}>
+        <Route path="bank" component={Bank}/>
+        <Route path="*" component={NoMatch}/>
+      </Route>
+    </Router> ;
+  }
+}
 
-export default App;
