@@ -1,0 +1,128 @@
+.aside-container {
+  width: 260px;
+  background: #F9F9F9;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  float: left;
+}
+
+.aside-container > ul > li {
+  overflow: hidden;
+}
+
+.aside-container li h4 {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 0 10px 46px;
+  margin: 0;
+  color: #5C6B77;
+  cursor: pointer;
+  transition: background .5s, border .5s;
+  border-left: 3px solid transparent;
+  position: relative;
+  z-index: 1;
+  background: #F9F9F9;
+  position: relative;
+}
+
+.aside-container li h4:after {
+  position: absolute;
+  top: 11px;
+  right: 30px;
+  content: "\e602";
+  font-family: "anticon";
+  transform: scale(0.6);
+  font-size: 12px;
+  color: #5C6B76;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.aside-container li[open=open] h4:after {
+  -webkit-transform: scale(0.6) rotate(180deg);
+  transform: scale(0.6) rotate(180deg);
+}
+
+.aside-container li:hover h4:after {
+  opacity: 0.8;
+}
+
+.aside-container li > ul.aside-list-show {
+  display: block;
+}
+
+.aside-container li > ul li {
+  border-left: 3px solid transparent;
+}
+
+.aside-container li a {
+  line-height: 40px;
+  height: 40px;
+  display: block;
+  padding-left: 60px;
+  font-size: 14px;
+  color: #5C6B76;
+}
+
+.aside-container li.type-divider {
+  font-size: 12px;
+  -webkit-transform:  scale(0.9);
+  transform: scale(0.9);
+  transform-origin: 0 50%;
+  color: #aaa;
+  text-shadow: 0px 1px 0px #FFF;
+  margin: 6px 0 6px 48px;
+}
+
+.aside-container > ul > li > a {
+  padding-left: 46px;
+  font-size: 14px;
+  border-left: 3px solid transparent;
+}
+
+.aside-container > ul > li.current > a {
+  border-left: 0;
+}
+
+.aside-container .chinese {
+  font-size: 12px;
+  margin-left: 6px;
+  font-weight: normal;
+  opacity: 0.67;
+}
+
+.aside-container li a:hover {
+  color: #6EB4E0;
+}
+
+.aside-container .current {
+  background: #fff;
+  border-left: 3px solid #71B5DE;
+  color: #71B5DE;
+}
+
+.aside-container .current a {
+  color: #71B5DE;
+}
+
+.main-wrapper {
+  background: #f9f9f9;
+}
+
+.main-container {
+  margin-left: 260px;
+  padding: 30px 40px 120px;
+  -webkit-animation: xRightMatrix .5s ease-out;
+  animation: xRightMatrix .5s ease-out;
+  background: #fff;
+  min-height: 500px;
+}
+
+.main-container-center {
+  margin: 0 auto;
+  padding: 30px 80px 120px;
+  border-left: 1px solid #e9e9e9;
+  border-right: 1px solid #e9e9e9;
+  width: 80%;
+  height: 100%;
+}
