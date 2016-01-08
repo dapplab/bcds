@@ -1,7 +1,13 @@
 import React from 'react';
 
-export default class Bank extends React.Component {
+export default class Home extends React.Component {
+
   render() {
-    return <div>Home</div> ;
+    return (
+      <div>
+        #todo index page
+      </div>
+    );
   }
+
 }
