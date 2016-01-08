@@ -2,8 +2,7 @@ import 'Entity';
 import "DraftCreator";
 
 contract Bank is Entity{
-  string name;
-  function Bank(string _name){
+  function Bank(bytes32 _name){
     name = _name;
   }
 
