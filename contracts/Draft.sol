@@ -26,12 +26,14 @@ contract Draft {
 
     holder = _to;
     holderType = _toType;
+    return true;
   }
 
   //using _toType to fit different user case, _toType can be Company, Bank, Exchange
   function beforeTransfer(address _to, bytes32 _toType) onlyHolder returns (bool) {
     entities.push(_to);
     entitiesType[_to] = _toType;
+    return true;
   }
 
   modifier onlyHolder {
