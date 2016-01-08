@@ -13,6 +13,7 @@
     "react-dom": "~0.14.3"
   },
   "devDependencies": {
+    "bignumber.js": "^2.1.4",
     "dora": "0.2.x",
     "dora-plugin-atool-build": "0.4.x",
     "dora-plugin-hmr": "0.3.x",
