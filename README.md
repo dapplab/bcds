@@ -20,3 +20,8 @@ npm run dev
 
 now open at http://127.0.0.1:8989
 
+# build contract
+```
+./build
+```
+
