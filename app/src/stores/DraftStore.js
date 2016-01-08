@@ -1,4 +1,4 @@
-export default class Draft {
+export default class DraftStore {
   static drafts = [
     {bankName: "bank of china", payerName: "ancun", payeeName: "fugle", amount: 2000000, rate: 34, mature: 1452273587},
     {

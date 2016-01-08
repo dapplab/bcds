@@ -4,6 +4,7 @@ import {Form, Input, Select, Checkbox, Radio, DatePicker} from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioGroup = Radio.Group;
+import BankStore from "../stores/BankStore" ;
 
 export default class CreateDraft extends React.Component {
 
@@ -51,10 +52,9 @@ export default class CreateDraft extends React.Component {
             labelCol={{span: 6}}
             wrapperCol={{span: 14}}>
             <Select id="draft-bank" size="large" defaultValue="选择银行" style={{width:200}}>
-              <Option value="boc">中国银行</Option>
-              <Option value="abc">中国农业银行</Option>
-              <Option value="icbc">中国工商银行</Option>
-              <Option value="idc">中国建设银行</Option>
+              { BankStore.banks.map( (x) => {
+                return <Option value={x.addr}>{x.bankName}</Option> ;
+              } ) }
             </Select>
           </FormItem>
 

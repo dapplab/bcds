@@ -1,11 +1,11 @@
 import React from 'react';
 import FormatUtil from '../common/utils' ;
-import Draft from '../stores/Draft' ;
+import DraftStore from '../stores/DraftStore' ;
 
 export default class Company extends React.Component {
 
   render() {
-    let drafts = Draft.drafts.map( (x) => {
+    let drafts = DraftStore.drafts.map( (x) => {
       return ( <div><div>
         {x.bankName}
       </div>
