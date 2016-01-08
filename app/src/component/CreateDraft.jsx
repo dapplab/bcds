@@ -12,7 +12,12 @@ export default class CreateDraft extends React.Component {
 
       <div className="form-general">
         <Form horizontal>
-          
+          <FormItem
+            label="收款人："
+            labelCol={{span: 6}}
+            wrapperCol={{span: 14}}>
+            <Input id="draft-payee" placeholder="Please enter..." />
+          </FormItem>
 
           <FormItem
             label="出票金额："
