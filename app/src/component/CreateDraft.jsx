@@ -18,35 +18,30 @@ export default class CreateDraft extends React.Component {
             wrapperCol={{span: 14}}>
             <Input id="draft-payee" placeholder="Please enter..." />
           </FormItem>
-
           <FormItem
             label="出票金额："
             labelCol={{span: 6}}
             wrapperCol={{span: 14}}>
             <Input id="draft-amount" placeholder="Please enter..." />
           </FormItem>
-
           <FormItem
             label="利率："
             labelCol={{span: 6}}
             wrapperCol={{span: 14}}>
             <Input id="draft-rate" placeholder="Please enter..." />
           </FormItem>
-
           <FormItem
             label="付款日期："
             labelCol={{span: 6}}
             wrapperCol={{span: 14}}>
             <DatePicker id="draft-mature" size="small" />
           </FormItem>
-
           <FormItem
             label="申请人："
             labelCol={{span: 6}}
             wrapperCol={{span: 14}}>
             <Input id="draft-payer" placeholder="Please enter..." />
           </FormItem>
-
           <FormItem
             label="出票行："
             labelCol={{span: 6}}
@@ -57,7 +52,6 @@ export default class CreateDraft extends React.Component {
               } ) }
             </Select>
           </FormItem>
-
           <FormItem
             label="备注："
             labelCol={{span: 6}}
