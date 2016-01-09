@@ -1,13 +1,14 @@
 import { StringUtil } from "../common/utils" ;
+import { message } from 'antd';
 
 export default class CompanyStore {
   static createCompanies() {
     var info= function(){
-      toastr.info("sucessful save") ;
+      message.info("sucessful save") ;
     }
 
     var err= function(e) {
-      toastr.error(e);
+      message.error(e);
     }
 
     var hub = EntityHub.deployed() ;

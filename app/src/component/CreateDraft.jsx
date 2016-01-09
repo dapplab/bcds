@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Input, Select, Checkbox, Radio, DatePicker, Row, Col, Button} from 'antd';
+import {Form, Input, Select, Checkbox, Radio, DatePicker, Row, Col, Button, message} from 'antd';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -33,7 +33,7 @@ const CreateDraft = React.createClass({
   createDraft(form) {
 
     if(!form.bank ) {
-      toastr.error( "Please choice your acceptance bank");
+      message.error( "Please choice your acceptance bank");
       return;
     }
 
@@ -41,12 +41,12 @@ const CreateDraft = React.createClass({
     var from = {from: form.bank.account};
 
     if( !form.payer ) {
-      toastr.error( "Please choice payer company");
+      message.error( "Please choice payer company");
       return;
     }
 
     if( !form.payee ) {
-      toastr.error( "Please choice payee company");
+      message.error( "Please choice payee company");
       return;
     }
 

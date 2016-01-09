@@ -24,7 +24,6 @@
     "history": "^1.17.0",
     "pre-commit": "1.x",
     "react-router": "^1.0.3",
-    "toastr": "^2.1.2",
     "web3": "^0.15.1"
   },
   "pre-commit": [
