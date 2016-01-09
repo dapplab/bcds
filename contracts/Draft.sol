@@ -24,6 +24,7 @@ contract Draft {
   }
 
   function transfer(address _to, bytes32 _toType) onlyHolder returns (bool) {
+    if(entitiesType[entities[entities.length - 1]] == 'Bank' ) throw;
     if(entities[entities.length - 1] != _to) throw;
 
     // TX(holder, _to, 'transfer');

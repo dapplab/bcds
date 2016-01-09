@@ -25,4 +25,8 @@ contract Bank{
   function addDraft(address _draft) {
     drafts.push(_draft);
   }
+
+  function getDrafts() constant returns (address[]){
+    return drafts;
+  }
 }
