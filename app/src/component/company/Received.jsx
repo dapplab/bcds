@@ -3,7 +3,16 @@ import { Table, Tag } from 'antd';
 
 function renderAction() {
   return (
-    <Tag color="green">已承兑</Tag>
+    <div>
+      <a href="/#/draft/1">查看详情</a> &nbsp;&nbsp;
+      <a href="#">背书转让</a>
+    </div>
+  );
+}
+
+function renderStatus() {
+  return (
+    <Tag color="green">已收票</Tag>
   );
 }
 
@@ -19,7 +28,8 @@ const columns = [
   {title: 'Issue Bank', dataIndex: 'bank', key: 'bank'},
   {title: 'Payee', dataIndex: 'payee', key: 'payee'},
   {title: 'Mature time', dataIndex: 'mature', key: 'mature'},
-  {title: 'Status', dataIndex: '', key: 'x', render: renderAction}
+  {title: 'Status', dataIndex: 'status', key: 'status', render: renderStatus},
+  {title: 'Actions', dataIndex: 'actions', key: 'x', render: renderAction}
 ];
 
 const data = [

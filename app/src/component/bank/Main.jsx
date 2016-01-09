@@ -17,7 +17,7 @@ class Main extends React.Component {
     }) ;
 
     return (
-      <div className="main-wrapper">
+      <div className="main-wrapper bank-client">
         <div className="aside-container">
           <ul>
             <li><a href="/#/draft/new" className="">Create Draft</a></li>
