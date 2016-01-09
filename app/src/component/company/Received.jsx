@@ -1,14 +1,6 @@
 import React from 'react';
 import { Table, Tag } from 'antd';
-
-function renderAction() {
-  return (
-    <div>
-      <a href="/#/draft/1">查看详情</a> &nbsp;&nbsp;
-      <a href="#">背书转让</a>
-    </div>
-  );
-}
+import Actions from './Actions';
 
 function renderStatus() {
   return (
@@ -29,7 +21,7 @@ const columns = [
   {title: 'Payee', dataIndex: 'payee', key: 'payee'},
   {title: 'Mature time', dataIndex: 'mature', key: 'mature'},
   {title: 'Status', dataIndex: 'status', key: 'status', render: renderStatus},
-  {title: 'Actions', dataIndex: 'actions', key: 'x', render: renderAction}
+  {title: 'Actions', dataIndex: 'actions', key: 'x', render: function(text, record) {return(<Actions draft={record} />)}}
 ];
 
 const data = [
