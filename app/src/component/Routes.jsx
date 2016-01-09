@@ -3,6 +3,7 @@ import { Router, Route, Link ,browserHistory, IndexRoute } from 'react-router';
 import Home from './Home';
 import Bank from './Bank';
 import Company from './Company';
+import Draft from './Draft';
 import CreateDraft from './CreateDraft';
 import Setup from './Setup' ;
 import CompanyDrafts from './CompanyDrafts';
@@ -19,6 +20,7 @@ export default class Routes extends React.Component {
           <Route  path="/company/received" component={CompanyReceived}/> 
         </Route>
         <Route  path="draft/new" component={CreateDraft}/>
+        <Route  path="draft/:id" component={Draft}/>
         <Route  path="setup" component={Setup} />
       </Route>
     </Router>) ;
