@@ -7,12 +7,7 @@
     "Bank",
     "Company",
     "Draft",
-<<<<<<< HEAD
-    "DraftCreator",
-    "Entity" 
-=======
     "Entity"
->>>>>>> 3ddcef99e6540f35a4d6d0599cadd852f5aa202e
   ],
   "rpc": {
     // Default RPC configuration.
