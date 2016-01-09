@@ -2,10 +2,13 @@ import "Bank";
 import "Company";
 
 contract EntityHub {
-  address owner;
+  address public owner;
 
-  mapping(address => address) banks;
-  mapping(address => address) companies;
+  address[] public banks;
+  address[] public companies;
+
+  event NewBank(address bank);
+  event NewCompany(address company);
 
   function EntityHub() {
     owner = msg.sender;
@@ -15,25 +18,26 @@ contract EntityHub {
     if( msg.sender == owner ) _
   }
 
-  function findBank(address _account) returns (address) {
-    return banks[_account];
+  function ping() {
   }
 
-  function findCompany(address _account) returns (address) {
-    return companies[_account];
+  function getBanks() returns (address[]) {
+    return banks;
   }
 
-  function createBank(bytes32 _name, address _account) onlyOwner {
-     banks[_account] = new Bank(_name);
+  function getCompanies() returns (address[]) {
+    return companies;
   }
 
-  function createCompany(bytes32 _name , address _account) onlyOwner {
-     companies[_account] = new Company(_name) ;
+  function createBank(bytes32 _name) onlyOwner {
+    address bank = new Bank(_name);
+    NewBank(bank);
+    banks.push(bank);
   }
 
-  modifier onlyowner() {
-    if (msg.sender != owner)
-      throw;
-    _
+  function createCompany(bytes32 _name) onlyOwner {
+    address company = new Company(_name);
+    NewCompany(company);
+    companies.push(company);
   }
 }
