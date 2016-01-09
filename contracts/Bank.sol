@@ -1,4 +1,5 @@
 import 'Entity';
+import 'Draft';
 
 contract Bank is Entity{
   function Bank(bytes32 _name){

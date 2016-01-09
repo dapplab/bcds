@@ -4,6 +4,7 @@ import Home from './Home';
 import Bank from './Bank';
 import Company from './Company';
 import CreateDraft from './CreateDraft';
+import Setup from './Setup' ;
 import CompanyDrafts from './CompanyDrafts';
 import CompanyReceived from './CompanyReceived';
 
@@ -18,6 +19,7 @@ export default class Routes extends React.Component {
           <Route  path="/company/received" component={CompanyReceived}/> 
         </Route>
         <Route  path="draft/new" component={CreateDraft}/>
+        <Route  path="setup" component={Setup} />
       </Route>
     </Router>) ;
   }
