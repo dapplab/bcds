@@ -5,8 +5,13 @@ import "Company";
 contract EntityHub {
   address owner; 
 
-  mapping(address => address) banks; 
-  mapping(address => address) companies; 
+  address[] bankAccounts; 
+  bytes32[] bankNames;
+  address[] bankContracts;
+
+  address[] companyAccounts; 
+  bytes32[] companyNames;
+  address[] companyContracts;
 
   function EntityHub() {
     owner = msg.sender; 
@@ -16,19 +21,41 @@ contract EntityHub {
     if( msg.sender == owner ) _ 
   }
 
-  function findBank(address _account) returns (address) {
-    return banks[_account]; 
+  function findCompany(address _account) constant returns(address){
+    uint size = companyAccounts.length;
+    for(uint n=0; n<size; n++) {
+      if(_account == companyAccounts[n]) {
+        return companyContracts[n];
+      }
+    }
   }
 
-  function findCompany(address _account) returns (address) {
-    return companies[_account]; 
+  function findBank(address _account) constant returns(address) {
+    uint size = bankAccounts.length;
+    for( uint n=0; n<size; n++) {
+      if(_account == bankAccounts[n]) {
+        return bankContracts[n];
+      }
+    }
+  }
+
+  function listBanks() constant returns(address[], bytes32[], address[]) {
+    return (bankAccounts, bankNames, bankContracts);
+  }
+
+  function listCompanies() constant returns(address[], bytes32[], address[]) {
+    return (companyAccounts, companyNames, companyContracts);
   }
 
   function createBank(bytes32 _name, address _account) onlyOwner {
-     banks[_account] = new Bank(_name); 
+     bankAccounts.push(_account);
+     bankNames.push(_name);
+     bankContracts.push(new Bank(_name));
   }
 
-  function createCompany(bytes32 _name , address _account) onlyOwner {
-     companies[_account] = new Company(_name) ; 
+  function createCompany(bytes32 _name, address _account) onlyOwner {
+     companyAccounts.push(_account);
+     companyNames.push(_name);
+     companyContracts.push(new Company(_name));
   }
 }

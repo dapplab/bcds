@@ -3,13 +3,11 @@
     "app.js": [ ]
   },
   "deploy": [
-    // Names of contracts that should be deployed to the network.
-/*    "Bank",
+    "Entity" ,
+    "Bank",
     "Company",
     "Draft",
-*/
-    "Entity" 
- //   "EntityHub" 
+    "EntityHub" 
   ],
   "rpc": {
     // Default RPC configuration.

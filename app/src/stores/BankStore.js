@@ -1,6 +1,6 @@
 export default class BankStore {
   constructor(props) {
-    this.bankContract = setupBankContract;
+    this.bankContract = setupBankContract();
   }
 
   setupBankContract() {
