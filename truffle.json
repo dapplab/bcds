@@ -4,10 +4,12 @@
   },
   "deploy": [
     // Names of contracts that should be deployed to the network.
-    "Bank",
+/*    "Bank",
     "Company",
     "Draft",
-    "Entity"
+*/
+    "Entity" 
+ //   "EntityHub" 
   ],
   "rpc": {
     // Default RPC configuration.
