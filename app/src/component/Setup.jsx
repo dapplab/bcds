@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from 'antd';
 import BankStore from '../stores/BankStore' ;
 import CompanyStore from '../stores/CompanyStore' ;
 
@@ -15,8 +16,8 @@ export default class Setup extends React.Component {
   };
 
   render() {
-    return( <div>
-      <button onClick={this.handleInit} >初始化数据</button>
+    return( <div className="main-container-center">
+      <Button size="big" type="primary" onClick={this.handleInit} >初始化数据</Button>
     </div>) ;
   }
 }
