@@ -1,5 +1,4 @@
 import 'Entity';
-import "DraftCreator";
 
 contract Bank is Entity{
   function Bank(bytes32 _name){
@@ -7,7 +6,8 @@ contract Bank is Entity{
   }
 
   function createDraft(address _payer, address _payee, uint _amount, uint _rate, uint _mature) returns (address) {
-    address latest = drafts.create(address(this), _payer, _payee, _amount, _rate, _mature);
+    address latest = new Draft(msg.sender, _payer, _payee, _amount, _rate, _mature);
+    drafts.push(latest);
     //Draft(latest).transfer(address(this), _payer, 'Company');
     return latest;
   }
