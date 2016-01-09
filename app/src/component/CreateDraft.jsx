@@ -17,8 +17,24 @@ const CreateDraft = React.createClass({
     };
   },
 
+  createDraft(amount, rate, mature) {
+    var bank = Bank.deployed();
+    var from = {from: web3.eth.coinbase};
+
+    var ali = Company.deployed();
+    var qq = Company.at('0x3631836ee2f08e0f7d0fffb5605bc4868b3ddba9');
+
+    bank.CreatedDraft(null, 'latest', function(err, res){
+      window.draft = Draft.at(res.args.draft);
+    });
+    bank.createDraft(ali.address, qq.address, amount, rate, mature, from).then(function(txid){});
+  },
+
   handleSubmit(e) {
     e.preventDefault();
+    this.createDraft(12, 24, 36);
+    //You got a window.draft in javascript console after you click
+    //submit button
     console.log('收到表单值~~~ ：' + JSON.stringify(this.state.formData, function(k, v) {
       if (typeof v === 'undefined') {
         return '';
