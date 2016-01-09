@@ -5,6 +5,7 @@ contract Bank{
   address[] drafts;
 
   event CreatedBank(bytes32 indexed topic, bytes32 name);
+  event CreatedDraft(bytes32 indexed topic, address draft);
 
   function Bank(bytes32 _name){
     name = _name;
@@ -16,9 +17,10 @@ contract Bank{
     CreatedBank('BANK', _name);
   }
 
-  function createDraft(address _payer, address _payee, uint _amount, uint _rate, uint _mature) returns (address) {
+  function createDraft(address _payer, address _payee, uint32 _amount, uint32 _rate, uint32 _mature) returns (address) {
     address latest = new Draft(address(this), _payer, _payee, _amount, _rate, _mature);
     drafts.push(latest);
+    CreatedDraft('Draft', latest);
     return latest;
   }
 

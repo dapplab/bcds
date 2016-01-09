@@ -1,8 +1,8 @@
 contract Draft {
   address public bank;
-  uint    public amount;
-  uint    public rate;
-  uint    public mature;
+  uint32    public amount;
+  uint32    public rate;
+  uint32    public mature;
 
   address[] public entities;
   mapping (address => bytes32) entitiesType;
@@ -12,7 +12,7 @@ contract Draft {
 
   // event TX(address indexed from, address indexed to, bytes32 indexed funName);
 
-  function Draft(address _bank, address _payer, address _payee, uint _amount, uint _rate, uint _mature) {
+  function Draft(address _bank, address _payer, address _payee, uint32 _amount, uint32 _rate, uint32 _mature) {
     bank = _bank;
     (amount, rate, mature) = (_amount, _rate, _mature);
 
