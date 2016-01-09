@@ -53,7 +53,7 @@ export default class CreateDraft extends React.Component {
             wrapperCol={{span: 14}}>
             <Select id="draft-bank" size="large" defaultValue="选择银行" style={{width:200}}>
               { BankStore.banks.map( (x) => {
-                return <Option value={x.addr}>{x.bankName}</Option> ;
+                return <Option key={x.key} value={x.addr}>{x.bankName}</Option> ;
               } ) }
             </Select>
           </FormItem>
