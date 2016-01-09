@@ -21,7 +21,7 @@ export default class BankStore {
   static banks = undefined;
 
   static getBanks() {
-    return new Promise((reslove, reject) => {
+    return new Promise((resolve, reject) => {
         if (!BankStore.banks) {
           var hub = EntityHub.deployed();
 
@@ -35,7 +35,7 @@ export default class BankStore {
             }
 
             BankStore.banks = banks;
-            reslove(BankStore.banks);
+            resolve(BankStore.banks);
           });
         } else {
           resolve(BankStore.banks);

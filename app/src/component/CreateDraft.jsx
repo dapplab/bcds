@@ -18,7 +18,7 @@ const CreateDraft = React.createClass({
     };
   },
 
-  componentDidMount() {
+  componentWillMount() {
     var that = this ;
     BankStore.getBanks().then((x)=>{
       that.setState({banks:x});
@@ -28,8 +28,6 @@ const CreateDraft = React.createClass({
     CompanyStore.getCompanies().then((y)=>{
       that.setState({companies:y});
     })
-
-
   },
 
   createDraft(form) {
