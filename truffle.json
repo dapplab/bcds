@@ -5,8 +5,12 @@
   "deploy": [
     "Bank",
     "Company",
+<<<<<<< HEAD
     "Draft",
     "EntityHub" 
+=======
+    "EntityHub"
+>>>>>>> 4a1da0964ee362bc6b59e2f6f7d47763a44ee358
   ],
   "rpc": {
     // Default RPC configuration.

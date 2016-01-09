@@ -8,8 +8,8 @@ class Main extends React.Component {
         <div className="aside-container">
           <ul>
             <li><a href="/#/draft/new" className="">Create Draft</a></li>
-            <li className="current"><a href="/#/bank/issued">Issued Drafts</a></li>
-            <li><a href="/#/bank/received">Received Drafts</a></li>
+            <li className="current"><a href="/#/company/issued">Issued Drafts</a></li>
+            <li><a href="/#/company/received">Received Drafts</a></li>
           </ul>
         </div>
         <div className="main-container">

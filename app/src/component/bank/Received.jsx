@@ -5,7 +5,7 @@ function renderAction() {
   return (
     <div>
       <a href="/#/draft/1">查看详情</a> &nbsp;&nbsp;
-      <a href="#">归档</a>
+      <a href="#">转贴现</a>
     </div>
   );
 }

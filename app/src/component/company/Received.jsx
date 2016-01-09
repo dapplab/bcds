@@ -1,9 +1,10 @@
 import React from 'react';
 import { Table, Tag } from 'antd';
+import Actions from './Actions';
 
-function renderAction() {
+function renderStatus() {
   return (
-    <Tag color="green">已承兑</Tag>
+    <Tag color="green">已收票</Tag>
   );
 }
 
@@ -19,7 +20,8 @@ const columns = [
   {title: 'Issue Bank', dataIndex: 'bank', key: 'bank'},
   {title: 'Payee', dataIndex: 'payee', key: 'payee'},
   {title: 'Mature time', dataIndex: 'mature', key: 'mature'},
-  {title: 'Status', dataIndex: '', key: 'x', render: renderAction}
+  {title: 'Status', dataIndex: 'status', key: 'status', render: renderStatus},
+  {title: 'Actions', dataIndex: 'actions', key: 'x', render: function(text, record) {return(<Actions draft={record} />)}}
 ];
 
 const data = [
