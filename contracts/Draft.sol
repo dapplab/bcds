@@ -10,7 +10,7 @@ contract Draft {
   address public holder;
   bytes32 public holderType;
 
-  // event TX(address indexed from, address indexed to, bytes32 indexed funName);
+  event TX(address indexed from, address indexed to, bytes32 indexed funName);
 
   function Draft(address _bank, address _payer, address _payee, uint32 _amount, uint32 _rate, uint32 _mature) {
     bank = _bank;
@@ -27,8 +27,9 @@ contract Draft {
     if(entitiesType[entities[entities.length - 1]] == 'Bank' ) throw;
     if(entities[entities.length - 1] != _to) throw;
 
-    // TX(holder, _to, 'transfer');
     _to.call(bytes4(sha3("addDraft(address)")), address(this));
+
+    TX(holder, _to, 'transfer');
     holder = _to;
     holderType = _toType;
     return true;
