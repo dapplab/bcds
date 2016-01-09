@@ -2,6 +2,7 @@ app/javascripts/contracts.js
 build
 node_modules
 .idea
+datadir/leveldb
 
 environments
 
