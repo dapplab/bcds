@@ -21,11 +21,13 @@ const CreateDraft = React.createClass({
   componentWillMount() {
     var that = this ;
     BankStore.getBanks().then((x)=>{
+      console.log('banks: ', x);
       that.setState({banks:x});
     })
 
 
     CompanyStore.getCompanies().then((y)=>{
+      console.log('companies:', y);
       that.setState({companies:y});
     })
   },
@@ -37,8 +39,8 @@ const CreateDraft = React.createClass({
       return;
     }
 
-    var bank = Bank.at(form.bank.contract) ;
-    var from = {from: form.bank.account};
+    var bank = Bank.at(form.bank) ;
+    var from = {from: web3.eth.accounts[0], gas: 12345678};
 
     if( !form.payer ) {
       message.error( "Please choice payer company");
@@ -52,15 +54,16 @@ const CreateDraft = React.createClass({
 
 
     bank.CreatedDraft(null, 'latest', function(err, res){
+      console.log('draft created:', res.args.draft);
       window.draft = Draft.at(res.args.draft);
     });
 
-    bank.createDraft(form.payer.contract, form.payee.contract, form.amount, form.rate, form.mature, from).then(function(txid){});
+    bank.createDraft(form.payer, form.payee, form.amount, form.rate, Date.now(), from).then(function(txid){console.log(txid);});
   },
 
   handleSubmit(e) {
     e.preventDefault();
-
+    console.log(this.state.formData);
     this.createDraft(this.state.formData) ;
   },
 
@@ -74,11 +77,10 @@ const CreateDraft = React.createClass({
             labelCol={{span: 6}}
             wrapperCol={{span: 14}}>
             <Select id="draft-payee" onChange={this.setValue.bind(this,'payee')} name="payee" placeholder="Please enter..." >
-              {
-                this.state.companies.map( (x) => {
-                <Option value={x}> {x.name} </Option> } )
-              }
-              </Select>
+              { this.state.companies.map( (x, i) => {
+                  return <Option key={i} value={x.contract}> {x.name} </Option> ;
+              } ) }
+            </Select>
           </FormItem>
           <FormItem
             label="出票金额："
@@ -103,10 +105,9 @@ const CreateDraft = React.createClass({
             labelCol={{span: 6}}
             wrapperCol={{span: 14}}>
             <Select id="draft-payer" onChange={this.setValue.bind(this,'payer')} name="payer" placeholder="Please enter..." >
-              {
-                this.state.companies.map( (x) => {
-                  <Option value={x}> {x.name} </Option> } )
-              }
+              { this.state.companies.map( (x, i) => {
+                  return <Option key={i} value={x.contract}> {x.name} </Option> ;
+              } ) }
             </Select>
           </FormItem>
           <FormItem
@@ -114,8 +115,8 @@ const CreateDraft = React.createClass({
             labelCol={{span: 6}}
             wrapperCol={{span: 14}}>
             <Select id="draft-bank" size="large" name="bank" defaultValue="选择银行" onChange={this.setValue.bind(this,'bank')} style={{width:200}}>
-              { this.state.banks.map( (x) => {
-                return <Option value={x}>{x.name}</Option> ;
+              { this.state.banks.map( (x, i) => {
+                return <Option key={i} value={x.contract}>{x.name}</Option> ;
               } ) }
             </Select>
           </FormItem>

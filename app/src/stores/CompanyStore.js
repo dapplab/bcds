@@ -13,8 +13,8 @@ export default class CompanyStore {
 
     var hub = EntityHub.deployed() ;
 
-    hub.createBank( "Company 1" , web3.eth.accounts[0] , {from:web3.eth.accounts[0]}).then(info,err);
-    hub.createBank( "Company 2" , web3.eth.accounts[4] , {from:web3.eth.accounts[0]}).then(info,err);
+    hub.createCompany( "Company 1" , web3.eth.accounts[0] , {from:web3.eth.accounts[0], gas: 12345678}).then(info,err);
+    hub.createCompany( "Company 2" , web3.eth.accounts[0] , {from:web3.eth.accounts[0], gas: 12345678}).then(info,err);
   }
 
   static companies = undefined ;

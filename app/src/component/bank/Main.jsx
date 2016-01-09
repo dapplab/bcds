@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import FormatUtil from '../../common/utils' ;
+import {FormatUtil} from '../../common/utils' ;
 import DraftStore from '../../stores/DraftStore' ;
 
 class Main extends React.Component {
