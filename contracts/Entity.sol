@@ -1,9 +1,13 @@
-import 'DraftCreator';
 import 'Draft';
 
 contract Entity {
-  using DraftCreator for address[];
-
-  bytes32 name;
+  bytes32 public name;
+  address public owner;
   address[] drafts;
+
+  modifier onlyowner() {
+    if (msg.sender != owner)
+      throw;
+    _
+  }
 }
