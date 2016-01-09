@@ -13,4 +13,8 @@ contract Bank{
     drafts.push(latest);
     return latest;
   }
+
+  function addDraft(address _draft) {
+    drafts.push(_draft);
+  }
 }
