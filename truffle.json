@@ -6,7 +6,8 @@
     // Names of contracts that should be deployed to the network.
     "Draft",
     "Bank",
-    "Company"
+    "Company",
+    "EntityHub"
   ],
   "rpc": {
     // Default RPC configuration.
