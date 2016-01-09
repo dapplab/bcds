@@ -1,4 +1,6 @@
 import React from 'react';
+import BankStore from '../stores/BankStore' ;
+import CompanyStore from '../stores/CompanyStore' ;
 
 export default class Setup extends React.Component {
 
@@ -7,21 +9,14 @@ export default class Setup extends React.Component {
     this.state = {bankName:"" , companyName:""};
   }
 
-  handleAddBank = (event) => {
-
-  };
-
-  handleAddCompany = (event) => {
-
+  handleInit = (event) => {
+    BankStore.createBanks();
+    CompanyStore.createCompanies();
   };
 
   render() {
     return( <div>
-      <input value={this.state.bankName} />
-      <button onclick={this.handleAddBank} >新增银行</button>
-
-      <input value={this.state.companyName} />
-      <button onclick={this.handleAddCompany} >新增企业</button>
+      <button onClick={this.handleInit} >初始化数据</button>
     </div>) ;
   }
 }
