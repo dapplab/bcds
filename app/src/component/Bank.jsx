@@ -1,7 +1,11 @@
-import React from 'react';
+import Main from './bank/Main';
+import Issued from './bank/Issued';
+import Received from './bank/Received';
 
-export default class Bank extends React.Component {
-  render() {
-    return <div>Bank</div> ;
-  }
-}
+const Bank = {
+  Main,
+  Issued,
+  Received
+};
+
+export default Bank;

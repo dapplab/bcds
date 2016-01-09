@@ -1,7 +1,12 @@
-import 'Entity';
+contract Company {
+  bytes32 public name;
+  address[] drafts;
 
-contract Company is Entity{
-  function Company(bytes32 _name){
+  function setName(bytes32 _name) {
     name = _name;
+  }
+
+  function addDraft(address _draft) {
+    drafts.push(_draft);
   }
 }

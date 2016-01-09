@@ -29,3 +29,21 @@ now open at http://127.0.0.1:8989
 ```
 truffle deploy
 ```
+=======
+
+
+
+----
+run hydrachain
+```
+hydrachain -d ~/workspace/bcdsdir -c jsonrpc.corsdomain='http://127.0.0.1:8989' runlocal --num_validators=1 --seed=42
+```
+
+####hydrachain config
+
+create some accounts
+`hydrachain -d ~/workspace/bcdsdir account new`
+
+
+show me the money through
+vim ~/workspace/bcdsdir/genesis.json
