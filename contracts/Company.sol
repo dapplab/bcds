@@ -13,6 +13,8 @@ contract Company is Entity{
     name = _name;
   }
 
+  //TODO: should check drafts last entity, only add draft to self when
+  //draft transfed to me
   function addDraft(address _draft) external {
     drafts.push(_draft);
   }

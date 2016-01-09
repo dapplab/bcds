@@ -24,6 +24,8 @@ contract Bank is Entity{
     return latest;
   }
 
+  //TODO: should check drafts last entity, only add draft to self when
+  //draft transfed to me
   function addDraft(address _draft) {
     drafts.push(_draft);
   }
