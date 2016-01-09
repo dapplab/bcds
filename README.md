@@ -25,3 +25,7 @@ now open at http://127.0.0.1:8989
 ./generate
 ```
 
+# deploy contract
+```
+truffle deploy
+```
