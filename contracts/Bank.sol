@@ -9,6 +9,7 @@ contract Bank is Entity{
   event CreatedDraft(bytes32 indexed topic, address draft);
 
   function Bank(bytes32 _name){
+    owner = tx.origin;
     name = _name;
     CreatedBank('BANK', _name);
   }

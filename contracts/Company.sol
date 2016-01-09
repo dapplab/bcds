@@ -6,6 +6,7 @@ contract Company is Entity{
   address[] public drafts;
 
   function Company(bytes32 _name) {
+    owner = tx.origin;
     name = _name;
   }
 
