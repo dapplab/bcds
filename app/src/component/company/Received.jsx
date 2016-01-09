@@ -18,7 +18,6 @@ const columns = [
   {title: 'Rate', dataIndex: 'rate', key: 'rate'},
   {title: 'Payer', dataIndex: 'payer', key: 'payer'},
   {title: 'Issue Bank', dataIndex: 'bank', key: 'bank'},
-  {title: 'Payee', dataIndex: 'payee', key: 'payee'},
   {title: 'Mature time', dataIndex: 'mature', key: 'mature'},
   {title: 'Status', dataIndex: 'status', key: 'status', render: renderStatus},
   {title: 'Actions', dataIndex: 'actions', key: 'x', render: function(text, record) {return(<Actions draft={record} />)}}
