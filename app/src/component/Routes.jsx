@@ -6,8 +6,6 @@ import Company from './Company';
 import Draft from './Draft';
 import CreateDraft from './CreateDraft';
 import Setup from './Setup' ;
-import CompanyDrafts from './CompanyDrafts';
-import CompanyReceived from './CompanyReceived';
 
 export default class Routes extends React.Component {
   render() {
@@ -19,9 +17,10 @@ export default class Routes extends React.Component {
           <Route  path="/bank/issued" component={Bank.Issued}/>
           <Route  path="/bank/received" component={Bank.Received}/>  
         </Route>
-        <Route  path="company">
-          <Route  path="/company/drafts" component={CompanyDrafts}/>  
-          <Route  path="/company/received" component={CompanyReceived}/> 
+        <Route  path="company" component={Company.Main}>
+          <IndexRoute component={Company.Drafts}/>
+          <Route  path="/company/drafts" component={Company.Drafts}/>  
+          <Route  path="/company/received" component={Company.Received}/> 
         </Route>
         <Route  path="draft/new" component={CreateDraft}/>
         <Route  path="draft/:id" component={Draft}/>
