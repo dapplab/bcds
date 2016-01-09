@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 class Main extends React.Component {
 
@@ -7,9 +8,9 @@ class Main extends React.Component {
       <div className="main-wrapper">
         <div className="aside-container">
           <ul>
-            <li><a href="/#/draft/new" className="">Create Draft</a></li>
-            <li className="current"><a href="/#/company/issued">Issued Drafts</a></li>
-            <li><a href="/#/company/received">Received Drafts</a></li>
+            <li><Link to="/draft/new" activeClassName="active">Create Draft</Link></li>
+            <li><Link to="/company/drafts" activeClassName="active">Sent Drafts</Link></li>
+            <li><Link to="/company/received" activeClassName="active">Received Drafts</Link></li>
           </ul>
         </div>
         <div className="main-container">

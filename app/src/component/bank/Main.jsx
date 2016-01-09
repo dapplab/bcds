@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import FormatUtil from '../../common/utils' ;
 import DraftStore from '../../stores/DraftStore' ;
 
@@ -20,9 +21,9 @@ class Main extends React.Component {
       <div className="main-wrapper bank-client">
         <div className="aside-container">
           <ul>
-            <li><a href="/#/draft/new" className="">Create Draft</a></li>
-            <li className="current"><a href="/#/bank/issued">Sent Drafts</a></li>
-            <li><a href="/#/bank/received">Received Drafts</a></li>
+            <li><Link to="/draft/new" activeClassName="active">Create Draft</Link></li>
+            <li><Link to="/bank/issued" activeClassName="active">Issued Drafts</Link></li>
+            <li><Link to="/bank/received" activeClassName="active">Received Drafts</Link></li>
           </ul>
         </div>
         <div className="main-container">
