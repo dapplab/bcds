@@ -31,13 +31,27 @@ class Actions extends React.Component {
   render() {
 
     console.log(this.props.draft)
+    let status = 'received';
+    let buttons;
+    switch(status) {
+      case "issued":
+        buttons = <SendButton draft={this.props.draft} />;
+        break;
+      case "received":
+        buttons = <div>
+          <TransferButton draft={this.props.draft} />
+          <DiscountButton draft={this.props.draft} />
+          <AskButton draft={this.props.draft} />
+        </div>;
+        break;
+      case "completed":
+        break
+    };
+    
     return (
       <div className="draft-actions">
         <a href="/#/draft/1">Show</a> &nbsp;&nbsp;
-        <SendButton draft={this.props.draft} />
-        <TransferButton draft={this.props.draft} />
-        <DiscountButton draft={this.props.draft} />
-        <AskButton draft={this.props.draft} />
+        {buttons}
       </div>
     );
 
