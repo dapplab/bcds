@@ -3,7 +3,7 @@ import "Draft";
 
 contract Company is Entity{
   bytes32 public name;
-  address[] drafts;
+  address[] public drafts;
 
   function Company(bytes32 _name) {
     name = _name;
@@ -25,5 +25,9 @@ contract Company is Entity{
 
   function transfer(address _draft, address _to, bytes32 _toType) onlyowner external{
       Draft(_draft).transfer(_to, _toType);
+  }
+
+  function getDrafts() constant returns (address[]){
+    return drafts;
   }
 }
