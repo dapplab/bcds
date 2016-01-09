@@ -1,1 +1,6 @@
 node: {privkey_hex: b0b03949e9369718dc8ebd04aad5cbc9d745e8f011a19337fdfac3ff4b70132b}
+jsonrpc:
+  corsdomain: http://127.0.0.1:8989
+eth:
+  genesis: bcds/datadir/genesis.json
+  genesis_hash: 33f8ca391868a15ef2524c4b496cc51d202beeb03
