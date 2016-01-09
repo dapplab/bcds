@@ -8,14 +8,8 @@ contract Entity {
     drafts.push(_address);
   }
 
-  function removeDraft(address _address) returns (bool){
-    for(uint i = 0; i < drafts.length; i++){
-      if(drafts[i] == _address){
-        delete drafts[i];
-        return true;
-      }
-    }
-    return false;
+  function getDrafts() constant returns (address[]){
+    return drafts;
   }
 
   modifier onlyowner() {

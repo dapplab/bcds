@@ -10,6 +10,8 @@ contract Draft {
   address public holder;
   bytes32 public holderType;
 
+  // event TX(address indexed from, address indexed to, bytes32 indexed funName);
+
   function Draft(address _bank, address _payer, address _payee, uint _amount, uint _rate, uint _mature) {
     bank = _bank;
     (amount, rate, mature) = (_amount, _rate, _mature);
@@ -24,6 +26,8 @@ contract Draft {
   function transfer(address _to, bytes32 _toType) onlyHolder returns (bool) {
     if(entities[entities.length - 1] != _to) throw;
 
+    // TX(holder, _to, 'transfer');
+    _to.call(bytes4(sha3("addDraft(address)")), address(this));
     holder = _to;
     holderType = _toType;
     return true;
@@ -31,6 +35,8 @@ contract Draft {
 
   //using _toType to fit different user case, _toType can be Company, Bank, Exchange
   function beforeTransfer(address _to, bytes32 _toType) onlyHolder returns (bool) {
+    // TX(entities[entities.length-1], _to, 'beforeTransfer');
+
     entities.push(_to);
     entitiesType[_to] = _toType;
     return true;
