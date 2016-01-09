@@ -1,4 +1,7 @@
-contract Company {
+import "Entity";
+import "Draft";
+
+contract Company is Entity{
   bytes32 public name;
   address[] drafts;
 
@@ -6,11 +9,19 @@ contract Company {
     name = _name;
   }
 
-  function setName(bytes32 _name) {
+  function setName(bytes32 _name) onlyowner {
     name = _name;
   }
 
-  function addDraft(address _draft) {
+  function addDraft(address _draft) external {
     drafts.push(_draft);
+  }
+
+  function beforeTransfer(address _draft, address _to, bytes32 _toType) onlyowner external{
+      Draft(_draft).beforeTransfer(_to, _toType);
+  }
+
+  function transfer(address _draft, address _to, bytes32 _toType) onlyowner external{
+      Draft(_draft).transfer(_to, _toType);
   }
 }
