@@ -14,7 +14,11 @@ export default class Routes extends React.Component {
     return (<Router history={browserHistory}>
       <Route path="/">
         <IndexRoute component={Home} />
-        <Route  path="bank" component={Bank}/>
+        <Route path="bank" component={Bank.Main}>
+          <IndexRoute component={Bank.Issued}/>
+          <Route  path="/bank/issued" component={Bank.Issued}/>
+          <Route  path="/bank/received" component={Bank.Received}/>  
+        </Route>
         <Route  path="company">
           <Route  path="/company/drafts" component={CompanyDrafts}/>  
           <Route  path="/company/received" component={CompanyReceived}/> 
