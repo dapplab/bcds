@@ -11,7 +11,7 @@ class Send extends React.Component {
 
   render() {
     return (
-      <Button type="primary" onClick={this.handleSend}>Send</Button>        
+      <Button type="primary" size="small" onClick={this.handleSend}>Send</Button>        
     );
   }
 

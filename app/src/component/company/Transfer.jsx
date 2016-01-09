@@ -32,7 +32,7 @@ class Transfer extends React.Component {
 
     return (
       <div className="draft-transfer">
-        <Button type="primary" onClick={this.showModal}>Transfter</Button>
+        <Button type="ghost" size="small" onClick={this.showModal}>Transfter</Button>
         <Modal title="背书转让 transfer" visible={this.state.visible} onCancel={this.handleCancel}>
           <Form horizontal onSubmit={this.handleSubmit}>
             <FormItem
@@ -40,8 +40,6 @@ class Transfer extends React.Component {
               labelCol={{span: 6}}
               wrapperCol={{span: 14}}>
               <Input id="draft-holder" placeholder="Please enter..." />
-
-              <Button type="primary" htmlType="submit">Submit</Button>
             </FormItem>
           </Form>
         </Modal>

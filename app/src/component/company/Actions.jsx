@@ -2,6 +2,8 @@ import React from 'react';
 import { Form, Input, Select, Modal, Button } from 'antd';
 import SendButton from './Send';
 import TransferButton from './Transfer';
+import DiscountButton from './Discount';
+import AskButton from './Ask';
 
 const FormItem = Form.Item;
 
@@ -34,8 +36,8 @@ class Actions extends React.Component {
         <a href="/#/draft/1">Show</a> &nbsp;&nbsp;
         <SendButton draft={this.props.draft} />
         <TransferButton draft={this.props.draft} />
-        <Button type="ghost" onClick={this.showModal}>Discount</Button>
-        <Button type="ghost" onClick={this.showModal}>Ask</Button>
+        <DiscountButton draft={this.props.draft} />
+        <AskButton draft={this.props.draft} />
       </div>
     );
 
