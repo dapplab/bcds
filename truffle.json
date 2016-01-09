@@ -6,7 +6,8 @@
     "Bank",
     "Company",
     "Draft",
-    "EntityHub" 
+    "EntityHub",
+    "Entity"
   ],
   "rpc": {
     // Default RPC configuration.
