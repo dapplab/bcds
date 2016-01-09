@@ -24,9 +24,11 @@ const CreateDraft = React.createClass({
       that.setState({banks:x});
     })
 
-    CompanyStore.getCompanies().then((x)=>{
-      that.setState({companies:x});
+
+    CompanyStore.getCompanies().then((y)=>{
+      that.setState({companies:y});
     })
+
 
   },
 

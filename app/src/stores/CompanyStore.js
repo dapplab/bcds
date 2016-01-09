@@ -12,11 +12,11 @@ export default class CompanyStore {
 
     var hub = EntityHub.deployed() ;
 
-    hub.createBank( "Company 1" , web3.eth.accounts[3] , {from:web3.eth.accounts[0]}).then(info,err);
+    hub.createBank( "Company 1" , web3.eth.accounts[0] , {from:web3.eth.accounts[0]}).then(info,err);
     hub.createBank( "Company 2" , web3.eth.accounts[4] , {from:web3.eth.accounts[0]}).then(info,err);
   }
 
-  static companies = [];
+  static companies = undefined ;
 
   static getCompanies() {
     return new Promise((reslove, reject) => {

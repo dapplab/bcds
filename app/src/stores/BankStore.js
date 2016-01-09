@@ -14,7 +14,7 @@ export default class BankStore {
     }
 
     var hub = EntityHub.deployed();
-    hub.createBank("BOC", web3.eth.accounts[1], {from: web3.eth.accounts[0]}).then(info,err);
+    hub.createBank("BOC", web3.eth.accounts[0], {from: web3.eth.accounts[0]}).then(info,err);
     hub.createBank("ICBC", web3.eth.accounts[2], {from: web3.eth.accounts[0]}).then(info,err);
   }
 
