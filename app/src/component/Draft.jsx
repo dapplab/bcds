@@ -12,7 +12,7 @@ export default class Draft extends React.Component {
 
   componentDidMount() {
     this.setState({
-      draft: this.props.params.id
+      draft: DraftStore.getById(this.props.params.id)
     })
   }
 
