@@ -18,6 +18,7 @@ contract Draft {
 
     entities.push(_payer);
     entities.push(_payee);
+    _payer.call(bytes4(sha3("addDraft(address)")), address(this));
 
     holder = _payer;
     holderType = 'Company';
