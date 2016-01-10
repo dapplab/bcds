@@ -18,12 +18,11 @@ class Footer extends React.Component {
           </li>
           <li>
             <h2>联系我们</h2>
-            <a target="_blank" href="#">反馈和建议</a>
-            <a target="_blank" href="#">讨论</a>
-            <a target="_blank" href="#">报告 Bug</a>
+            <a target="_blank" href="mailto: v@baoquan.com">反馈和建议</a>
+            <a target="_blank" href="https://github.com/bcds-hackathon/bcds/issues">报告 Bug</a>
           </li>
           <li>
-            <h3>2016 Shanghai Blockchain Hackathon</h3>
+            <h3>Build with ❤ at 2016 Shanghai Blockchain Hackathon</h3>
             <h3>版本：<span id="versions-select">0.1.0</span></h3>
           </li>
         </ul>
