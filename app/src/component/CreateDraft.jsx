@@ -52,13 +52,11 @@ const CreateDraft = React.createClass({
       return;
     }
 
-
     bank.CreatedDraft(null, 'latest', function(err, res){
-      console.log('draft created:', res.args.draft);
       window.draft = Draft.at(res.args.draft);
     });
 
-    bank.createDraft(form.payer, form.payee, form.amount, form.rate, Date.now(), from).then(function(txid){console.log(txid);});
+    bank.createDraft(form.payer, form.payee, form.amount, form.rate, Date.now(), from).then(function(x){message.info("successful create draft " + x );});
   },
 
   handleSubmit(e) {

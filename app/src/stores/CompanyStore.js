@@ -17,6 +17,23 @@ export default class CompanyStore {
     hub.createCompany( "Company 2" , web3.eth.accounts[0] , {from:web3.eth.accounts[0], gas: 12345678}).then(info,err);
   }
 
+  static currentCompany = undefined ;
+
+  static getCompany() {
+    return new Promise((resolve,reject) => {
+      if( !CompanyStore.currentCompany ) {
+        var hub = EntityHub.deployed() ;
+
+        hub.findCompany.call(web3.eth.accounts[0],{from:web3.eth.coinbase}).then( (r)=> {
+          CompanyStore.currentCompany = Company.at(r) ;
+          resolve(CompanyStore.currentCompany) ;
+        })
+      } else {
+        resolve(CompanyStore.currentCompany) ;
+      }
+    }) ;
+  }
+
   static companies = undefined ;
 
   static getCompanies() {
