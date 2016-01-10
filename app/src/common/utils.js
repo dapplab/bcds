@@ -8,7 +8,7 @@ class FormatUtil {
   }
 
   static formatDate(value) {
-    var date = new Date(value * 1000);
+    var date = new Date(value*1000);
     return date.getFullYear().toString() + "-" + (date.getMonth() + 1).toString() + "-" + date.getDate();
   }
 }

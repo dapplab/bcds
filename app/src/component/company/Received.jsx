@@ -56,8 +56,10 @@ export default class CompanyReceived extends React.Component {
     var that = this ;
 
     drafts.map((item)=>{
-      DraftStore.queryDraft(item).then(x=> this.drafts.push(x));
-      that.setDraftList(that.drafts);
+      DraftStore.queryDraft(item).then(x=> {
+        that.drafts.push(x);
+        that.setDraftList(that.drafts);
+      });
     }) ;
   }
 
@@ -71,7 +73,7 @@ export default class CompanyReceived extends React.Component {
     );
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.getDraftList();
   }
 

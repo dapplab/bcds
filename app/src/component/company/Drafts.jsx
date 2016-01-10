@@ -41,19 +41,20 @@ export default class CompanyDrafts extends React.Component {
 
   setDraftList(drafts) {
     var result = drafts.map((item, index) => {
-      return { key: index + 1, bankName: item.bankName, companyName: item.companyName, amount:item.amount,rate:item.rate,mature:item.mature}
+      return { key: index + 1, bankName: item.bankName, companyName: item.companyName, amount:item.amount,rate:item.rate,mature:item.mature };
     });
     this.setState({ drafts: result });
   }
-
 
   queryDraftList(drafts) {
     this.drafts = [] ;
     var that = this ;
 
     drafts.map((item)=>{
-      DraftStore.queryDraft(item).then(x=> this.drafts.push(x));
-      that.setDraftList(this.drafts);
+      DraftStore.queryDraft(item).then(x=> {
+        that.drafts.push(x);
+        that.setDraftList(that.drafts);
+      });
     }) ;
   }
 
@@ -67,7 +68,7 @@ export default class CompanyDrafts extends React.Component {
     );
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.getDraftList();
   }
 
