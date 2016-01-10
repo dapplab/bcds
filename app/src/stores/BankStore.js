@@ -38,6 +38,10 @@ export default class BankStore {
 
   static banks = undefined;
 
+  static bankName(address) {
+    BankStore.banks.find((x)=>{x.contract==address}).name ;
+  }
+
   static getBanks() {
     return new Promise((resolve, reject) => {
         if (!BankStore.banks) {

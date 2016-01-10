@@ -36,6 +36,10 @@ export default class CompanyStore {
 
   static companies = undefined ;
 
+  static companyName(address) {
+    CompanyStore.companies.find((x)=>{x.contract==address}).name ;
+  }
+
   static getCompanies() {
     return new Promise((reslove, reject) => {
         if (!CompanyStore.companies) {

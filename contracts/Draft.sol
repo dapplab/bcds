@@ -24,6 +24,10 @@ contract Draft {
     holderType = 'Company';
   }
 
+  function getInfo() returns(address, address, uint32, uint32, uint32) {
+    return (bank, holder, amount, rate, mature);
+  }
+
   function transfer(address _to, bytes32 _toType) onlyHolder returns (bool) {
     if(entitiesType[entities[entities.length - 1]] == 'Bank' ) throw;
     if(entities[entities.length - 1] != _to) throw;
