@@ -4,6 +4,7 @@ import "Entity";
 contract Bank is Entity{
   bytes32 public name;
   address[] drafts;
+  address[] public receivedDrafts;
 
   event CreatedBank(bytes32 indexed topic, bytes32 name);
   event CreatedDraft(bytes32 indexed topic, address draft);
@@ -34,4 +35,13 @@ contract Bank is Entity{
   function getDrafts() constant returns (address[]) {
     return drafts;
   }
+
+  function addReceivedDrafts(address _draft) external {
+    receivedDrafts.push(_draft);
+  }
+
+  function getReceivedDrafts() constant returns (address[]){
+    return receivedDrafts;
+  }
+
 }

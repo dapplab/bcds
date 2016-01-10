@@ -19,6 +19,7 @@ contract Draft {
     entities.push(_payer);
     entities.push(_payee);
     _payer.call(bytes4(sha3("addDraft(address)")), address(this));
+    _payee.call(bytes4(sha3("addReceivedDrafts(address)")), address(this));
 
     holder = _payer;
     holderType = 'Company';
@@ -32,7 +33,7 @@ contract Draft {
     if(entitiesType[entities[entities.length - 1]] == 'Bank' ) throw;
     if(entities[entities.length - 1] != _to) throw;
 
-    _to.call(bytes4(sha3("addDraft(address)")), address(this));
+    _to.call(bytes4(sha3("addReceivedDrafts(address)")), address(this));
 
     TX(holder, _to, 'transfer');
     holder = _to;

@@ -49,7 +49,7 @@ export default class CompanyReceived extends React.Component {
     var that = this ;
 
     CompanyStore.getCompany().then( (r) => {
-      r.getDrafts(null, {from:web3.eth.coinbase}).then(that.setDraftList.bind(that));
+      r.getReceivedDrafts(null, {from:web3.eth.coinbase}).then(that.setDraftList.bind(that));
       }
     );
   }

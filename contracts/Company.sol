@@ -4,6 +4,7 @@ import "Draft";
 contract Company is Entity{
   bytes32 public name;
   address[] public drafts;
+  address[] public receivedDrafts;
 
   function Company(bytes32 _name) {
     owner = tx.origin;
@@ -30,5 +31,13 @@ contract Company is Entity{
 
   function getDrafts() constant returns (address[]){
     return drafts;
+  }
+
+  function addReceivedDrafts(address _draft) external {
+    receivedDrafts.push(_draft);
+  }
+
+  function getReceivedDrafts() constant returns (address[]){
+    return receivedDrafts;
   }
 }
