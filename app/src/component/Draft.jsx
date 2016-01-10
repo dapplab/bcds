@@ -1,6 +1,6 @@
 import React from 'react';
-import {Timeline, Affix} from 'antd'
-import qrcode from '../../images/qrcode-example.jpg'
+import {Timeline, Affix} from 'antd';
+import qrcode from '../../images/qrcode-example.jpg';
 
 export default class Draft extends React.Component {
   constructor() {
