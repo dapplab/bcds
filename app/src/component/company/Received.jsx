@@ -1,40 +1,69 @@
 import React from 'react';
 import { Table, Tag } from 'antd';
 import Actions from './Actions';
+import CompanyStore from './../../stores/CompanyStore';
+
+function renderAction() {
+  return (
+    <div>
+      <a href="/#/draft/1">查看详情</a> &nbsp;&nbsp;
+      <a href="#">归档</a>
+    </div>
+  );
+}
 
 function renderStatus() {
   return (
-    <Tag color="green">已收票</Tag>
+    <Tag color="green">已承兑</Tag>
   );
 }
 
 function expandedRowRender(record) {
-  return <p>{record.memo}</p>;
+  return <p>testest</p>;
 }
 
 const columns = [
   {title: 'Draft no.', dataIndex: 'draftNo', key: 'draftNo'},
-  {title: 'Amount', dataIndex: 'amount', key: 'amount'},
-  {title: 'Rate', dataIndex: 'rate', key: 'rate'},
-  {title: 'Payer', dataIndex: 'payer', key: 'payer'},
-  {title: 'Issue Bank', dataIndex: 'bank', key: 'bank'},
-  {title: 'Mature time', dataIndex: 'mature', key: 'mature'},
-  {title: 'Status', dataIndex: 'status', key: 'status', render: renderStatus},
   {title: 'Actions', dataIndex: 'actions', key: 'x', render: function(text, record) {return(<Actions draft={record} />)}}
 ];
 
-const data = [
-  {key: 1, draftNo: '0001201601108989', amount: '100,000', rate: '8%', payer: '杭州娃哈哈股份有限公司', bank: '中国工商银行高新支行', payee: '美丽健乳业有限公司', mature: '2017-1-10 11:59', memo: '2016一季度牛奶货款'},
-  {key: 2, draftNo: '0001201601108989', amount: '100,000', rate: '8%', payer: '杭州娃哈哈股份有限公司', bank: '中国工商银行高新支行', payee: '美丽健乳业有限公司', mature: '2017-1-10 11:59', memo: '2016一季度牛奶货款'},
-];
 
 export default class CompanyReceived extends React.Component {
+
+
+  constructor() {
+    super();
+    this.state = {
+      drafts: []
+    }
+  }
+
+  setDraftList(drafts) {
+    var result = drafts.map((no, index) => {
+      return { key: index + 1, draftNo: no }
+    });
+    this.setState({ drafts: result });
+  }
+
+  getDraftList() {
+    var that = this ;
+
+    CompanyStore.getCompany().then( (r) => {
+      r.getDrafts(null, {from:web3.eth.coinbase}).then(that.setDraftList.bind(that));
+      }
+    );
+  }
+
+  componentWillMount(){
+    this.getDraftList();
+  }
+
   render() {
     return (
       <Table columns={columns}
-  expandedRowRender={expandedRowRender}
-  dataSource={data}
-  className="table" />
+        expandedRowRender={expandedRowRender}
+        dataSource={this.state.drafts}
+        className="table" />
     );
   }
 }

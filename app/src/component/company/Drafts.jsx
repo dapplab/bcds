@@ -21,7 +21,6 @@ function expandedRowRender(record) {
   return <p>testest</p>;
 }
 
-
 const columns = [
   {title: 'Draft no.', dataIndex: 'draftNo', key: 'draftNo'}
 ];
