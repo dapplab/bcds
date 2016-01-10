@@ -1,5 +1,5 @@
 import BankStore from "./BankStore" ;
-import CompanyStore from "CompanyStore" ;
+import CompanyStore from "./CompanyStore" ;
 
 export default class DraftStore {
   static queryDraft(address) {
