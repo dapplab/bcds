@@ -37,7 +37,7 @@ export default class CompanyStore {
   static companies = undefined ;
 
   static companyName(address) {
-    CompanyStore.companies.find((x)=>{x.contract==address}).name ;
+    CompanyStore.companies.find((x)=>{return x.contract==address}).name ;
   }
 
   static getCompanies() {

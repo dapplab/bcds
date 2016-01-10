@@ -39,7 +39,7 @@ export default class BankStore {
   static banks = undefined;
 
   static bankName(address) {
-    BankStore.banks.find((x)=>{x.contract==address}).name ;
+    BankStore.banks.find((x)=>{return x.contract==address}).name ;
   }
 
   static getBanks() {
