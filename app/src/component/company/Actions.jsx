@@ -47,10 +47,12 @@ class Actions extends React.Component {
       case "completed":
         break
     };
-    
+
+    var href = "/#/draft/" + this.props.draft.draftNo;
+
     return (
       <div className="draft-actions">
-        <a href="/#/draft/1">Show</a> &nbsp;&nbsp;
+        <a href={href}>Show</a> &nbsp;&nbsp;
         {buttons}
       </div>
     );
